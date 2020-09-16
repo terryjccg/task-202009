@@ -14,7 +14,7 @@
 ```
     mt = (A1.AtTime(t) + B1.AtTime(t)) / 2;
     mtn = (A1.AtTime(t + n) + B1.AtTime(t + n)) / 2;
-    y = (mtn - mt) / m * 1000
+    y = (mtn - mt) / mt * 1000
 ```
 
 其中`A1,B1`为卖一、买一价，`ETS`为当前时间，`n`为参数，这里设定为`5s`。真实值`y`也可表述为”未来`n`-sec后的中间价变化，单位为0.1%“。
@@ -24,7 +24,8 @@
 1. “#”和“##”后的数字可以确保行情与预测值时间点的对应，log本身不确保两种记录的先后顺序（每种记录各自有序）
 2. `A1 - B1 <= 0`的情况可以作为异常值丢弃
 3. `n`-sec对应的点向前或向后取可以自行取舍
-4. 性能加分
+4. 运行时间加分（语言，并发，复杂度，tricks）
+5. C# 实现加分
 
 数据按照~25M切分为若干个文件，文件编号也对应时间顺序，存储在Azure storage blob，连接字符串
 
@@ -32,4 +33,3 @@
 DefaultEndpointsProtocol=https;AccountName=tmptask;AccountKey=bsNjOiTW35QqxGVm4qlBbQ+6E3zGA/IK1qV4VzOYUDJ3R3xqEyCFIvCTK0VvLR0nBNiv5kkPOKHkioqBVgk14g==;EndpointSuffix=core.chinacloudapi.cn
 ```
 
-也可要求提供本地版本。
