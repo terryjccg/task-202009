@@ -2,7 +2,7 @@
 
 **请给出下面问题的一个实现，并输出结果**
 
-目标是解析log并计算**每一支股票的**预测值的`r_squared`。
+目标是解析log并计算**每一支股票的**预测值的`r_squared`（定义：[Wiki: Coefficient of determination](https://en.wikipedia.org/wiki/Coefficient_of_determination)）。
 
 有一组数据，记录了深圳A股的行情切片，以及某种模型对其未来变化做出的预测，样例如下：
 
